@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+const MostrarOcultar = () => {
+  // Inicializa o estado visivel como false
+  const [visivel, setVisivel] = useState(false);
+
+  // Função para alternar a visibilidade
+  const alternarVisibilidade = () => {
+    setVisivel(!visivel);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={alternarVisibilidade}>
+        {visivel ? 'Ocultar' : 'Mostrar'} Texto
+      </button>
+      {visivel && <p>ACHOU!!</p>}
     </div>
   );
-}
+};
 
-export default App;
+export default MostrarOcultar;
