@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
+import './App.css';
 
 const MostrarOcultar = () => {
-  // Inicializa o estado visivel como false
   const [visivel, setVisivel] = useState(false);
 
-  // Função para alternar a visibilidade
   const alternarVisibilidade = () => {
     setVisivel(!visivel);
   };
 
   return (
-    <div>
+    <div className={`container ${visivel ? 'visivel' : 'oculto'}`}>
       <button onClick={alternarVisibilidade}>
         {visivel ? 'Ocultar' : 'Mostrar'} Texto
       </button>
